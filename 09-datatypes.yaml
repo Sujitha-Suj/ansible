@@ -1,6 +1,6 @@
-- name: iscussion on datatypes
-  hosts: local
-  connection: local
+- name: discussion on datatypes
+  hosts: localhost
+  connection: localhost
   vars:
     course: "devops with AIOPS"
     duration_in_hrs: 150
