@@ -1,0 +1,5 @@
+- name: demo on vars
+  hosts: frontend
+  tasks:
+    debug:
+      msg: "Hi, I am learning {{ COURSE }}, Trainer is {{ TRAINER }}, Duration is {{ DURATION }}"
