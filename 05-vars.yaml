@@ -8,6 +8,6 @@
   tasks:
     - name: print the information
       vars: 
-      course: "i am learning the devops"
+       course: "i am learning the devops"
     - debug:
         msg: "I am learning {{ course }}, trainer is {{ trainer }}, and duration is {{ duration }}"
