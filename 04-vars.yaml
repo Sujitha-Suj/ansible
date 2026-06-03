@@ -6,5 +6,5 @@
     trainer: "sivakumar"
     duration: "150hrs"
   tasks:
-    debug:
+   - debug:
       msg: "I am learning {{ course }}, trainer is {{ trainer }}, and duration is {{ duration }}"
