@@ -1,0 +1,16 @@
+- name: variables on prompt 
+  hosts: localhost
+  connection: localhost
+  vars_prompt: 
+    - name: username
+      prompt: please enter the username
+      private: false
+  vars_prompt:
+    - name: password
+      prompt: please enter the password
+      private: true
+  tasks:
+  - name: print the information
+    debug:
+      msg: "Username is: {{ username }}, password is: {{ password }}"
+
