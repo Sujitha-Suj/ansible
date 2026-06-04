@@ -1,0 +1,11 @@
+- name: shell vs command
+  hosts: local
+  connection: local
+  tasks:
+    - name: shell vs command  
+      shell: cat /etc/passwd | grep root
+      register: users_output
+    
+    - name: print the users_output
+      debug:
+        msg: "{{ users_output }}"
