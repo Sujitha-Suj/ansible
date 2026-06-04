@@ -1,6 +1,7 @@
 - name: error handling
   hosts: local 
-  connection: local 
+  connection: local
+  become: yes
   tasks: 
     - name: print the user id
       command: id roboshop
