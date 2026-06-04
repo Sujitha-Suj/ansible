@@ -5,6 +5,7 @@
     - name: print the user id
       command: id roboshop
       register: users_output
+      ignore_errors: true
     
     - name: print the user information
       debug:
