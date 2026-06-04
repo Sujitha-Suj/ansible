@@ -1,0 +1,15 @@
+- name: error handling
+  hosts: local 
+  connection: local 
+  tasks: 
+    - name: print the user id
+      command: id roboshop
+      register: users_output
+    
+    - name: print the user information
+      debug:
+        msg: "{{ users_output }}"
+      
+    - name: create the user
+      command: useradd roboshop
+      when: users_output.rc != 0
