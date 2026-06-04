@@ -1,6 +1,6 @@
 - name: demo on conditions
-  hosts: local
-  connection: local
+  hosts: localhost
+  connection: localhost
   tasks:
     - name: print names
       debug:
