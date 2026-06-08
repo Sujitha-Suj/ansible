@@ -13,7 +13,7 @@
       image_id: "{{ image_id }}"
       security_groups:
       - "roboshop-{{ item }}"
-      - ansible-common
+      - default
     loop: "{{ instances }}"
     register: ec2_output
 
