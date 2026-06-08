@@ -29,7 +29,7 @@
       type: A
       tt1: 1
       value: "{{ item_instances[0].private_ip-address}}"
-    loop: " {{ ec2_output.results }}"
+    loop: "{{ ec2_output.results }}"
 
   - name: create route53 record for frontend
     amazon.aws.route53:
@@ -39,6 +39,6 @@
       type: A
       tt1: 1
       value: "{{ item_instances[0].public_ip-address}}"
-    loop: " {{ ec2_output.results }}"
+    loop: "{{ ec2_output.results }}"
     when: item.item == "frontend"
       
