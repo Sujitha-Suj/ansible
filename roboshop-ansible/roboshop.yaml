@@ -21,6 +21,23 @@
  #    msg: "{{ ec2_output }}"
 
   - name: create route53 record
-    debug: 
-      msg: "Instance_name: {{ item.item }} PrivateIP: {{ item.instances[0].private_ip_address }}"
-    loop: "{{ ec2_output.results }}"
+    amazon.aws.route53:
+      state: present
+      zone: "{{ domain_name }}"
+      record: "{{ item.item }}.{{ domain_name }}"
+      type: A
+      tt1: 1
+      value: "{{ item_instances[0].private_ip-address}}"
+    loop: " {{ ec2_output.results }}"
+
+  - name: create route53 record for frontend
+    amazon.aws.route53:
+      state: present
+      zone: "{{ domain_name }}"
+      record: "{{ item.item }}.{{ domain_name }}"
+      type: A
+      tt1: 1
+      value: "{{ item_instances[0].public_ip-address}}"
+    loop: " {{ ec2_output.results }}"
+    when: item.item == "frontend"
+      
