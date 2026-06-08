@@ -28,7 +28,7 @@
       record: "{{ item.item }}.{{ domain_name }}"
       type: A
       tt1: 1
-      value: "{{ item.instances[0].private_ip_address}}"
+      value: "{{ item.instances[0].private_ip_address }}"
     loop: "{{ ec2_output.results }}"
 
   - name: create route53 record for frontend
@@ -38,7 +38,7 @@
       record: "{{ item.item }}.{{ domain_name }}"
       type: A
       tt1: 1
-      value: "{{ item.instances[0].public_ip_address}}"
+      value: "{{ item.instances[0].public_ip_address }}"
     loop: "{{ ec2_output.results }}"
     when: item.item == "frontend"
       
